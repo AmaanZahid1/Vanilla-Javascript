@@ -1,0 +1,431 @@
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mate+SC&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300;400;600;700&display=swap");
+@import url("https://pro.fontawesome.com/releases/v5.10.0/css/all.css");
+:root {
+    --ash-gray: #cad2c5;
+    --light-sea-green: #a1bda7;
+    --dark-sea-green: #84a98c;
+    --hookers-green: #52796f;
+    --dark-slate-gray: #354f52;
+    --charcoal: #2f3e46;
+    --independence: #3a435e;
+    --black-coral: #455561;
+    --light-coral: #5c6672;
+    --rythem: #6c6f7f;
+    --light-gray: rgb(245, 245, 245);
+    --white: #ffff;
+    --black: #000000;
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+*::-moz-selection {
+    color: var(--charcoal);
+    background: var(--dark-sea-green);
+}
+*::selection {
+    color: var(--charcoal);
+    background: var(--dark-sea-green);
+}
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--light-coral);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--black-coral);
+}
+html {
+    scroll-behavior: smooth;
+}
+body,
+html {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+body {
+    display: grid;
+    grid-template-rows: 3rem auto fit-content(8rem);
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--dark-slate-gray);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3.5rem;
+    padding: 0 1rem;
+    z-index: 6;
+}
+header .title {
+    font-family: "Mate SC", serif;
+    color: var(--ash-gray);
+    margin: 0;
+}
+header .title span {
+    color: var(--dark-sea-green);
+}
+.main-nav__items {
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.main-nav__link {
+    position: relative;
+    text-decoration: none;
+    color: var(--white);
+    font-family: "Roboto Slab", serif;
+    margin: 0 0.5rem;
+}
+.main-nav__link:hover::after {
+    content: ";";
+    position: absolute;
+    right: -5px;
+}
+.main-nav__link:hover,
+.main-nav__link:focus {
+    color: var(--dark-sea-green);
+}
+main {
+    grid-area: main;
+}
+.section {
+    background: var(--dark-slate-gray);
+    font-family: "Roboto Slab", serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.section:nth-of-type(odd) {
+    background: var(--dark-slate-gray);
+}
+.section:nth-of-type(even) {
+    background: var(--hookers-green);
+}
+#home {
+    font-family: "Josefin Sans", sans-serif;
+    min-height: 95vh;
+    max-height: 100vh;
+    color: var(--ash-gray);
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+#home .tag {
+    font-size: 4rem;
+    color: var(--ash-gray);
+}
+#home .name {
+    color: var(--white);
+    font-size: 6rem;
+}
+#home .tag,
+#home .name,
+#home .meta {
+    text-align: center;
+    margin: 0.5rem 0;
+}
+#about {
+    min-height: 100vh;
+    flex-direction: row;
+}
+#about p {
+    width: 60%;
+    font-size: 1.8rem;
+    word-spacing: 2px;
+    color: var(--white);
+}
+.profile-img {
+    width: 25rem;
+    border-radius: 50%;
+    filter: grayscale(100);
+    transform: scale(1);
+    transition: all 150ms linear;
+}
+.profile-img:hover {
+    cursor: pointer;
+    transform: scale(1.03);
+    filter: grayscale(0);
+}
+#skills {
+    min-height: 100vh;
+}
+.section-heading {
+    color: var(--white);
+    font-size: 2rem;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+.skill-items {
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.skill-item {
+    width: 10rem;
+    height: 10rem;
+    margin: 0 0.5rem;
+    background-color: var(--white);
+    padding: 0.2rem;
+    border-radius: 50%;
+    box-shadow: 3px 3px 8px 5px rgba(0, 0, 0, 0.2);
+}
+.skill-item:nth-of-type(1) {
+    background: url("../img/js.png") center/cover no-repeat border-box,
+        var(--white);
+}
+.skill-item:nth-of-type(2) {
+    background: url("../img/react.png") center/cover no-repeat border-box,
+        var(--white);
+}
+.skill-item:nth-of-type(3) {
+    background: url("../img/electron.png") center/cover no-repeat border-box,
+        var(--white);
+}
+.skill-item:nth-of-type(4) {
+    background: url("../img/node.png") center/cover no-repeat border-box,
+        var(--white);
+}
+.skill-item:nth-of-type(5) {
+    background: url("../img/express.png") center/cover no-repeat border-box,
+        var(--white);
+}
+.skill-item:nth-of-type(6) {
+    background: url("../img/wordpress.png") center/cover no-repeat border-box,
+        var(--white);
+}
+#work {
+    min-height: 100vh;
+}
+.project,
+.exp-item {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 30rem;
+    background-color: var(--light-gray);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+.exp-item h3 {
+    font-size: 3rem;
+}
+.exp-item h3,
+.exp-item p {
+    margin: 0.2rem 0;
+}
+.exp-item hr {
+    width: 100%;
+}
+.exp-item p {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.exp-item ul {
+    margin: 0;
+    padding-left: 1rem;
+    list-style: none;
+}
+.exp-item ul li {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    position: relative;
+}
+.exp-item ul li::before {
+    content: "\1F892";
+    position: absolute;
+    left: -10px;
+}
+#projects {
+    min-height: 100vh;
+}
+.project-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 80%;
+}
+.project {
+    width: 20rem;
+    margin: 0 0.5rem;
+    min-height: 18rem;
+    justify-content: flex-start;
+    align-items: unset;
+    position: relative;
+    transform: scale(1);
+    transition: all 200ms linear;
+}
+.project:hover{
+    transform: scale(1.05);
+}
+.project-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+.project-desc {
+    margin: 0.5rem 0;
+}
+.project-tech {
+    color: var(--independence);
+    margin: 0.5rem 0;
+}
+.project-ctas {
+    position: absolute;
+    bottom: 0.8rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.project-cta {
+    font-size: 1.8rem;
+    margin: 0 0.3rem;
+    color: var(--black);
+}
+.project-cta:hover,
+.project-cta:focus{
+    color: var(--ash-gray);
+}
+#contact {
+    position: relative;
+    min-height: 50vh;
+}
+#contact h3 {
+    font-size: 3rem;
+    color: var(--white);
+}
+.cta {
+    text-decoration: none;
+    background: var(--white);
+    font-size: 1.2rem;
+    padding: 0.3rem 1rem;
+    color: var(--rythem);
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
+}
+.cta:hover {
+    background: var(--dark-slate-gray);
+    color: var(--white);
+}
+
+.contact-social__links {
+    margin-top: 1rem;
+}
+.contact-social__link {
+    font-size: 3rem;
+    margin: 0 0.5rem;
+}
+.contact-social__link:hover {
+    color: var(--charcoal);
+}
+.back-to-top {
+    padding: 1rem;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.back-to-top:hover {
+    background: var(--black);
+}
+.link {
+    text-decoration: none;
+    color: var(--ash-gray);
+}
+.link:hover {
+    text-decoration: underline;
+}
+footer {
+    font-family: "Kaushan Script", cursive;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    grid-area: footer;
+    background: var(--black);
+}
+footer p {
+    margin: 0;
+}
+@media (max-width: 60rem){
+    header{
+        justify-content: center;
+    }
+    .main-nav{
+        display: none;
+    }
+    #home {
+        padding: 0.5rem;
+    }
+    #home .tag {
+        font-size: 3rem;
+        text-align: center;
+    }
+    #home .name {
+        font-size: 6rem;
+    }
+    #about {
+        flex-direction: column;
+        padding: 1rem 0.8rem;
+    }
+    #about p {
+        width: unset;
+    }
+    .profile-img {
+        width: 20rem;
+    }
+    .section-heading {
+        text-align: center;
+    }
+    .skill-items {
+        width: 100%;
+    }
+    .skill-item {
+        margin: 0.5rem;
+    }
+    .exp-items{
+        padding: 1rem;
+    }
+    .project,
+    .exp-item {
+        width: 100%;
+    }
+    #projects{
+        padding: 1rem 0.8rem;
+    }
+    .project-list {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+    .project {
+        margin: 0.5rem;
+    }
+    #contact h3 {
+        text-align: center;
+    }
+}
